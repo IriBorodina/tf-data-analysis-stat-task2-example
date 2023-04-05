@@ -14,6 +14,5 @@ def solution(p: float, x: np.array) -> tuple:
     size = len(x)
     left = np.sqrt(size * (x ** 2).mean() / (1 * chi2.ppf(q=1 - alpha / 2, df=2 * size)))
     right = np.sqrt(size * (x ** 2).mean() / (1 * chi2.ppf(q=alpha / 2, df=2 * size)))
-    estimation = max(estimation, 0.08)
     return left, \
            right
