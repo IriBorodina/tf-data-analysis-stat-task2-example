@@ -11,8 +11,6 @@ def solution(p: float, x: np.array) -> tuple:
     # Это будет вашим решением
     # Не меняйте название функции и её аргументы
     alpha = 1 - p
-    size = len(x)
-    left = np.sqrt(size * (x ** 2).mean() / (1 * chi2.ppf(q=1 - alpha / 2, df=2 * size)))
-    right = np.sqrt(size * (x ** 2).mean() / (1 * chi2.ppf(q=alpha / 2, df=2 * size)))
-    return left, \
-           right
+    n = len (x)
+    return x.max()/(2*alpha**(1./n)), \
+           x.max()/2
